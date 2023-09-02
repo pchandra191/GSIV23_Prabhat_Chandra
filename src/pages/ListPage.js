@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import home from '../assets/home.png'
 import search from '../assets/search.png'
 import { setMovies } from '../store/actions'; // Import the action for setting movies
 import MovieList from '../components/MovieList'; // Import the MovieList component
