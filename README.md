@@ -70,5 +70,3 @@ Thank you for considering my application.
 Sincerely,
 Prabhat Chandra
 ```
-
-Please replace `[repository-url]` with the actual URL of your GitHub repository and `[Your Name]` with your name before sharing it.
