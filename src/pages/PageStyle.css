@@ -1,0 +1,43 @@
+.searchBox{
+ width: 50%;
+ padding: 1%;
+ background-color: rgb(216, 216, 216);
+ border: none;
+ border-radius: 5%;
+}
+
+.main {
+    /* margin: 1%; */
+}
+
+.topNav{
+    box-shadow: 1px 4px 6px 1px rgba(0, 0, 0, 0.1);
+/* background-color: aqua; */
+padding: 1%;
+}
+
+.movie-details-container {
+    display: flex;
+    flex-direction: row;
+    min-width: 512px; /* Minimum width for responsiveness */
+    padding: 1%;
+  }
+  
+  .movie-details {
+    text-align: left;
+    align-items: left;
+    margin-top: -0%;
+    padding: 1%;
+  }
+  
+  /* Media query for smaller screens */
+  @media screen and (max-width: 512px) {
+    .movie-details-container {
+      min-width: auto; /* Remove minimum width for smaller screens */
+    }
+  }
+
+  .notbold{
+    font-weight:normal
+}
+  
