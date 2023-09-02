@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { setMovieDetails } from '../store/actions';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import axios from 'axios';
 import './PageStyle.css';
+import home from '../assets/home.png'
+import back from '../assets/back.png'
 
 const MovieDetails = () => {
   const dispatch = useDispatch();
@@ -31,6 +33,7 @@ const MovieDetails = () => {
       // Make an API request to get movie details
       const response = await axios.request(options);
       const data = response.data;
+      console.log(data);
 
       // Dispatch movie details to Redux store
       dispatch(setMovieDetails(data));
@@ -44,6 +47,7 @@ const MovieDetails = () => {
   // Use useEffect to fetch movie details when the component loads
   useEffect(() => {
     fetchMovies();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [dispatch]);
 
   // Display a loading message while data is being fetched
@@ -69,19 +73,43 @@ const MovieDetails = () => {
     poster_path,
   } = movieDetails;
 
+  // Split the release_date to extract the year
+  const releaseYear = release_date ? release_date.split("-")[0] : "";
+
   return (
-    <div className="movie-details-container">
-      <img
-        src={`https://image.tmdb.org/t/p/w185/${poster_path}`}
-        alt={title}
-      />
-      <div className="movie-details">
-        <h2>
-          {title} <span className='notbold'>({vote_average})</span>
-        </h2>
-        <h5>{release_date} | {runtime} mins | {director}</h5>
-        <p>Cast: {cast}</p>
-        <p>Description: {overview}</p>
+    <div>
+      <div className='topNav'>
+      <Link to={`/`}>
+          <img
+            src={back}
+            alt="back"
+            height={30}
+            style={{ marginTop: "10px"}}
+          />
+        </Link>
+        <h3 > Movie Details</h3>
+        <Link to={`/`}>
+          <img
+            src={home}
+            alt="home"
+            height={60}
+          />
+        </Link>
+      </div>
+      <div className="movie-details-container">
+
+        <img
+          src={`https://image.tmdb.org/t/p/w185/${poster_path}`}
+          alt={title}
+        />
+        <div className="movie-details">
+          <h2>
+            {title} <span className='notbold'>({vote_average})</span>
+          </h2>
+          <h5>{releaseYear} | {runtime} mins | {director}</h5>
+          <p>Cast: {cast}</p>
+          <p>Description: {overview}</p>
+        </div>
       </div>
     </div>
   );

@@ -1,43 +1,66 @@
-.searchBox{
- width: 50%;
- padding: 1%;
- background-color: rgb(216, 216, 216);
- border: none;
- border-radius: 5%;
+/* Styles for the search input */
+.searchBox {
+  width: 50%;
+  padding: 1%;
+  background-color: rgb(216, 216, 216);
+  border: none;
+  border-radius: 5%;
+  margin: 1%;
 }
 
-.main {
-    /* margin: 1%; */
+/* Styles for the top navigation */
+.topNav {
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 1px 4px 6px 1px rgba(0, 0, 0, 0.1);
+  padding: 0.5%;
 }
 
-.topNav{
-    box-shadow: 1px 4px 6px 1px rgba(0, 0, 0, 0.1);
-/* background-color: aqua; */
-padding: 1%;
-}
-
+/* Styles for the movie details container */
 .movie-details-container {
-    display: flex;
-    flex-direction: row;
-    min-width: 512px; /* Minimum width for responsiveness */
-    padding: 1%;
-  }
-  
-  .movie-details {
-    text-align: left;
-    align-items: left;
-    margin-top: -0%;
-    padding: 1%;
-  }
-  
-  /* Media query for smaller screens */
-  @media screen and (max-width: 512px) {
-    .movie-details-container {
-      min-width: auto; /* Remove minimum width for smaller screens */
-    }
-  }
-
-  .notbold{
-    font-weight:normal
+  display: flex;
+  flex-direction: row;
+  min-width: 512px; /* Minimum width for responsiveness */
+  padding: 1%;
 }
-  
+
+/* Styles for the movie details section */
+.movie-details {
+  text-align: left;
+  align-items: left;
+  margin-top: -0%;
+  padding: 1%;
+}
+
+/* Media query for smaller screens */
+@media screen and (max-width: 512px) {
+  .movie-details-container {
+    min-width: auto; /* Remove minimum width for smaller screens */
+  }
+}
+
+/* Styles for text with a bold effect */
+.notbold {
+  font-weight: bold;
+  color: gray;
+  font-size: 18px;
+}
+
+/* Styles for the search container */
+.search-container {
+  position: relative;
+}
+
+/* Styles for the search icon */
+.searchBox {
+  padding-right: 30px; /* Adjust the padding to accommodate the search icon */
+}
+
+/* Styles for the search icon image */
+.search-icon {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
